@@ -1,0 +1,38 @@
+#include <stdio.h>
+int verificaArvore(int *preOrd, int *postOrd, int *inOrd, int tam)
+{
+    if(preOrd[0] == postOrd[tam-1] && preOrd[tam-1] == inOrd[tam-1]){
+        return 1;
+    }else{
+        return 0;
+    }
+    return 0;
+}
+int main()
+{
+    int tam, i;
+
+    scanf("%d", &tam);
+
+    int preOrd[tam], postOrd[tam], inOrd[tam];
+
+    for(i = 0; i < tam; i++){
+        scanf("%d", &preOrd[i]);
+    }
+    for(i = 0; i < tam; i++){
+        scanf("%d", &postOrd[i]);
+    }
+    for(i = 0; i < tam; i++){
+        scanf("%d", &inOrd[i]);
+    }
+
+    printf("\n");
+
+    if(verificaArvore(preOrd, postOrd, inOrd, tam)){
+        printf("yes\n");
+    }else{
+        printf("no");
+    }
+
+    return 0;
+}
